@@ -29,7 +29,8 @@
     "next-auth.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "path/to/your/global.d.ts"
   ],
   "exclude": ["node_modules"]
 }

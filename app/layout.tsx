@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 
+import { SessionProvider } from 'next-auth/react';
 import { Toaster } from 'react-hot-toast'
 
 import '@/app/globals.css'
@@ -27,11 +28,13 @@ export const metadata: Metadata = {
 }
 
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
+  session?: any;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children, session }: RootLayoutProps) {
   return (
+    <SessionProvider session={session}>
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
@@ -52,5 +55,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </Providers>
       </body>
     </html>
+    </SessionProvider>
   )
 }
