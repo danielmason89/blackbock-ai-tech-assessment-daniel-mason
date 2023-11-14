@@ -35,26 +35,26 @@ interface RootLayoutProps {
 export default function RootLayout({ children, session }: RootLayoutProps) {
   return (
     <SessionProvider session={session}>
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body
-        className={cn(
-          'font-sans antialiased',
-          fontSans.variable,
-          fontMono.variable
-        )}
-      >
-        <Toaster />
-        <Providers attribute="class" defaultTheme="system" enableSystem>
-          <div className="flex flex-col min-h-screen">
-            {/* @ts-ignore */}
-            <Header />
-            <main className="flex flex-col flex-1 bg-muted/50">{children}</main>
-          </div>
-          <TailwindIndicator />
-        </Providers>
-      </body>
-    </html>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body
+          className={cn(
+            'font-sans antialiased',
+            fontSans.variable,
+            fontMono.variable
+          )}
+        >
+          <Toaster />
+          <Providers attribute="class" defaultTheme="system" enableSystem>
+            <div className="flex flex-col min-h-screen">
+              {/* @ts-ignore */}
+              <Header />
+              <main className="flex flex-col flex-1 bg-muted/50">{children}</main>
+            </div>
+            <TailwindIndicator />
+          </Providers>
+        </body>
+      </html>
     </SessionProvider>
   )
 }
