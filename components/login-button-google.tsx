@@ -40,7 +40,7 @@ export function GoogleLoginButton({
       {isLoading ? (
         <IconSpinner className="mr-2 animate-spin" />
       ) : showGithubIcon ? (
-        <IconGoogle className="mr-2" />
+        <IconGoogle className="w-4 h-6 mr-4" />
       ) : null}
       {text}
     </Button>
